@@ -33,5 +33,8 @@ def upload_file():
         img = cv2.imread(filepath)
         result = DeepFace.analyze(img,actions=['emotion'])
         return jsonify({'success': f'{result[0][ 'dominant_emotion' ]}'}), 200
+
+if __name__ == '__main__':
+    app.run(debug=True)
     
 
